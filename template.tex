@@ -1,0 +1,239 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Twenty Seconds Resume/CV
+% LaTeX Template
+% Version 1.0 (14/7/16)
+%
+% Original author:
+% Carmine Spagnuolo (cspagnuolo@unisa.it) with major modifications by 
+% Vel (vel@LaTeXTemplates.com) and Harsh (harsh.gadgil@gmail.com)
+%
+% License:
+% The MIT License (see included LICENSE file)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[letterpaper]{twentysecondcv} % a4paper for A4
+
+% Command for printing skill overview bubbles
+% \newcommand\skills{ 
+% ~
+% 	\smartdiagram[bubble diagram]{
+%         \textbf{Information}\\\textbf{Security},
+%         \textbf{~~~Full Stack~~~}\\\textbf{~~~Dev~~~},
+%         \textbf{~~Database~~},
+%         \textbf{~~Network~~}\\\textbf{~Engineering~},
+%         \textbf{~~OSINT~~}
+%     }
+% }
+
+\newcommand\skills{ 
+    \begin{multicols}{2}
+    Networking \\ OSINT \\ Programming \\ 
+    OOP \\ Database Design \\ Linux CLI \\ PGP / GPG \\ Software Testing 
+    \end{multicols}
+}
+
+% Programming skill bars
+\programming{{Ruby $\textbullet$ PHP $\textbullet$ \large \LaTeX / 2.5}, {JavaScript $\textbullet$ Java / 4.0}, {C\# $\textbullet$ SQL $\textbullet$ Python / 5}}
+
+% % Projects text
+% \education{
+% ~\\
+% \textbf{MS, Information Technology} \\
+% Minnesota State University \\
+% 2018 - Present | Mankato, MN
+
+% \vspace{3mm}
+
+% \textbf{BS, Information Technology} \\
+% Summa Cum Laude \\
+% Minnesota State University \\
+% 2015 - 2018 | Mankato, MN
+
+% \vspace{3mm}
+
+% \textbf{AAS, Information Systems} \\
+% South Central College\\
+% 2014 - 2015 | North Mankato, MN
+
+% \vspace{3mm}
+
+% \textbf{AAS, Networking Services} \\
+% South Central College\\
+% 2012 - 2014 | North Mankato, MN
+
+% }
+
+
+\education{
+
+\begin{table}
+\renewcommand\arraystretch{1.4}
+\captionsetup{singlelinecheck=false, labelfont=sc, labelsep=quad}
+% \caption{Timeline}\vskip -1.5ex
+\begin{tabular}{@{\,}r <{\hskip 5pt} !{\foo} >{\raggedright\arraybackslash}p{5cm}}
+
+\addlinespace[1.5ex]
+2019 & \textbf{MS, Information Technology}
+Minnesota State University 
+Mankato, MN \\
+
+2018 & \textbf{BS, Information Technology}
+\textit{Summa Cum Laude} \hfill \break
+Minnesota State University 
+Mankato, MN \\
+
+2015 & \textbf{AAS, Information Systems} 
+South Central College
+North Mankato, MN \\
+
+2014 & \textbf{AAS, Networking Services} 
+South Central College
+North Mankato, MN \\
+
+
+\end{tabular}
+\end{table}
+
+
+}
+
+
+%----------------------------------------------------------------------------------------
+%	 PERSONAL INFORMATION
+%----------------------------------------------------------------------------------------
+% If you don't need one or more of the below, just remove the content leaving the command, e.g. \cvnumberphone{}
+
+\cvname{DAN SALMON} % Your name
+\cvjobtitle{ Aspiring InfoSec Analyst } % Job
+% title/career
+
+\cvlinkedin{/in/danthesalmon}
+\cvgithub{sa7mon}
+\cvnumberphone{+1 (612) 466 0599} % Phone number
+\cvsite{danthesalmon.com} % Personal website
+\cvmail{dan.sa7mon@gmail.com} % Email address
+
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\makeprofile % Print the sidebar
+ 
+%----------------------------------------------------------------------------------------
+%	 EXPERIENCE
+%----------------------------------------------------------------------------------------
+
+\section{Experience}
+
+\begin{twenty} % Environment for a list with descriptions
+\twentyitem
+    	{Feb 2018 -}
+		{Present}
+        {Graduate Assistant - Developer}
+        {\href{https://mankato.mnsu.edu/}{MNSU}}
+        {}
+        {\begin{itemize}
+        \item Developed a live bus tracking app for the University and partnership with the City of Mankato
+        \item Web app used Knockout JS, jQuery frameworks for the  frontend with a C\# MVC + Web API 2 backend
+        \end{itemize}}
+        \\
+	\twentyitem
+    	{Apr 2016 -}
+		{Feb 2018}
+        {Developer Intern}
+        {\href{https://www.fpx.com}{FPX}}
+        {}
+        {
+        {\begin{itemize}
+        \item Wrote tests for and reported bugs found in Java SaaS product
+        \item Run large test suites written in Java and JavaScript and interpreted results in CI/CD environment
+        \item Tools used: Atlassian suite, Slack, Jenkins, Selenium, JMeter
+    \end{itemize}}
+        }
+    \\   
+    \twentyitem
+   		{Nov 2015 -}
+		{Apr 2016}
+        {UX Lab Intern}
+        {\href{https://mankato.mnsu.edu/}{MNSU}}
+        {}
+        {
+        {\begin{itemize}
+        \item Developed Windows Phone app in C\# to be used campus-wide by students
+        \item Assisted other MNSU classes in running usability and user experience tests with state-of-the-art testing technologies including eye-tracking hardware and video monitoring
+
+    \end{itemize}}
+        }
+     \\
+     \twentyitem
+   		{Aug 2013 -}
+		{Jun 2014}
+        {Service Technician}
+        {\href{https://www.yourcts.net}{Computer Technology Solutions}}
+        {}
+        {
+        \begin{itemize}
+        \item Performed bench repair work on computers including OS migrations, virus removal, data recovery, and hardware replacements
+        \item Received certifications: \begin{itemize}
+            \item Apple Certified Macintosh Technician
+            \item WatchGuard Certified System Professional
+        \end{itemize}
+        \item Provide support and maintenance for customer's network and virtual infrastructure including firewalls, servers, and endpoints
+        \item Experience supporting products: WatchGuard XTM, ESXi, Hyper-V, Windows Server 2010/2012, MacOS, Windows 7/8/10, Active Directory, Veeam
+        
+    \end{itemize}
+    	}
+        
+	%\twentyitem{<dates>}{<title>}{<location>}{<description>}
+\end{twenty}
+
+%----------------------------------------------------------------------------------------
+%	 RESEARCH
+%----------------------------------------------------------------------------------------
+\section{Research \& Training}
+
+\begin{twenty}
+    \twentyitem
+    	{\hspace{10mm} \Large \faDatabase}
+		{}
+        {S3scanner}
+        {\href{https://github.com/sa7mon/s3scanner}{GitHub}}
+        {}
+        {\begin{itemize}
+        \item I created a Python tool for scanning AWS S3 buckets to find insecure permissions and sensitive data. 500+ stars on GitHub currently
+        \end{itemize}}
+    \\
+     \twentyitem
+    	{\hspace{10mm} \Large \faGlobe}
+		{}
+        {Hackerone / HackTheBox}
+        {}
+        {}
+        {\begin{itemize}
+        \item Outside of school, I like to spend time hunting bug bounties on Hackerone and participating in CTFs on hackthebox.eu
+        \end{itemize}}
+\end{twenty}
+
+\section{Community}
+
+\begin{twenty}
+    \twentyitem
+    	{2015 -}
+		{Present}
+        {Information Security Student Organization}
+        {\href{https://mankato.mnsu.edu/}{MNSU}}
+        {}
+        {\begin{itemize}
+        \item As the Vice President then President of the group, I led meetings of students and presented many InfoSec topics including hands-on demos
+        \item Each year, our group participates in the Collegiate Cyber Defense Competition (CCDC) in which we, as a team, defend a virtual environment against real-world red team attackers over an 8-hour period
+        \item \textbf{Topics presented}: WiFi cracking, lockpicking, Shodan, CTFs, Metasploit modules, encryption ciphers, Kali tools, staying safe online, and many more
+        \end{itemize}}
+\end{twenty}
+
+
+\end{document} 
