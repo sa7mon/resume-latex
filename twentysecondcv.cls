@@ -196,7 +196,7 @@
 
     %------------------------------------------------
     
-        \vspace{4mm}
+        \vspace{2mm}
     {\Huge\color{pblue}\cvname}
     
     \vspace{2mm}
@@ -346,6 +346,18 @@
 	}\\
 }
 
+\newcommand{\twentyitemtwo}[6]{%
+	#1&\parbox[t]{0.83\textwidth}{%
+		\textbf{#3}% 
+		\hfill%
+		{\footnotesize#3}%
+        }\\%
+    #2&\parbox[t]{0.83\textwidth}{%
+		\ifblank{#5}{}{#5 \\}
+		#6%
+	}\\
+}
+
 %----------------------------------------------------------------------------------------
 %	 SMALL LIST ENVIRONMENT
 %----------------------------------------------------------------------------------------
@@ -369,7 +381,7 @@
 %	 MARGINS AND LINKS
 %----------------------------------------------------------------------------------------
 
-\RequirePackage[left=7.6cm,top=0.1cm,right=1cm,bottom=0.1cm,nohead,nofoot]{geometry}
+\RequirePackage[left=7.6cm,top=0cm,right=1cm,bottom=0.1cm,nohead,nofoot]{geometry}
 
 
 % \usepackage{smartdiagram}
