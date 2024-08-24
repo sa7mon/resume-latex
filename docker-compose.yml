@@ -1,0 +1,95 @@
+version: '2.2'
+services:
+    sharelatex:
+        restart: always
+        image: sharelatex/sharelatex@sha256:28f666f253f8a980e40da531b5c841eff5c2063593792595ad991e781f234e45 # 5.1.1
+        container_name: sharelatex
+        depends_on:
+            mongo:
+                condition: service_healthy
+            redis:
+                condition: service_started
+        ports:
+            - 8080:80
+        links:
+            - mongo
+            - redis
+        stop_grace_period: 60s
+        volumes:
+            - overleaf_data:/var/lib/overleaf
+        environment:
+            OVERLEAF_APP_NAME: Overleaf Community Edition
+            OVERLEAF_MONGO_URL: mongodb://mongo/sharelatex
+            # Same property, unfortunately with different names in
+            # different locations
+            OVERLEAF_REDIS_HOST: redis
+            REDIS_HOST: redis
+            ENABLED_LINKED_FILE_TYPES: 'project_file,project_output_file'
+            # Enables Thumbnail generation using ImageMagick
+            ENABLE_CONVERSIONS: 'true'
+            # Disables email confirmation requirement
+            EMAIL_CONFIRMATION_DISABLED: 'true'
+            # temporary fix for LuaLaTex compiles
+            # see https://github.com/overleaf/overleaf/issues/695
+            TEXMFVAR: /var/lib/overleaf/tmp/texmf-var
+            ## Set for SSL via nginx-proxy
+            #VIRTUAL_HOST: 103.112.212.22
+            # OVERLEAF_SITE_URL: http://overleaf.example.com
+            # OVERLEAF_NAV_TITLE: Overleaf Community Edition
+            # OVERLEAF_HEADER_IMAGE_URL: http://example.com/mylogo.png
+            # OVERLEAF_ADMIN_EMAIL: support@it.com
+            # OVERLEAF_LEFT_FOOTER: '[{"text": "Another page I want to link to can be found <a href=\"here\">here</a>"} ]'
+            # OVERLEAF_RIGHT_FOOTER: '[{"text": "Hello I am on the Right"} ]'
+    mongo:
+       restart: always
+       image: mongo@sha256:54cbd623e11ce895bef20a0c5cc7e8bcabace2006584bc053b7221c14175e9a1 # 5.0
+       container_name: mongo
+       command: "--replSet overleaf"
+       expose:
+           - 27017
+       volumes:
+           - overleaf_mongo:/data/db
+       healthcheck:
+           test: echo 'db.stats().ok' | mongo localhost:27017/test --quiet
+           interval: 10s
+           timeout: 10s
+           retries: 5
+    mongoinit:
+       image: mongo@sha256:54cbd623e11ce895bef20a0c5cc7e8bcabace2006584bc053b7221c14175e9a1 # 5.0
+       # this container will exit after executing the command
+       restart: "no"
+       depends_on:
+          mongo:
+            condition: service_healthy
+       entrypoint:
+         [
+           "mongo",
+           "--host",
+           "mongo:27017",
+           "--eval",
+           'rs.initiate({ _id: "overleaf", members: [ { _id: 0, host: "mongo:27017" } ] })',
+         ]
+    redis:
+        restart: always
+        image: redis@sha256:58593b08f49173e9ed640f82e7780a4611e39353ad9887f011fe82348b8ef1cb # 6.2
+        container_name: redis
+        expose:
+            - 6379
+        volumes:
+            - overleaf_redis:/data
+    # nginx-proxy:
+    #     image: jwilder/nginx-proxy
+    #     container_name: nginx-proxy
+    #     ports:
+    #       #- "80:80"
+    #       - "443:443"
+    #     volumes:
+    #       - /var/run/docker.sock:/tmp/docker.sock:ro
+    #       - /home/overleaf/tmp:/etc/nginx/certs
+
+volumes:
+  overleaf_data:
+    external: true
+  overleaf_mongo:
+    external: true
+  overleaf_redis:
