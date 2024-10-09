@@ -166,7 +166,6 @@
 \newcommand\programming[1]{ 
 	\renewcommand{\programming}{
 		\begin{tikzpicture}
-        % 	\node [above right] at (0, 4) {$0 \: LOC \: \arrow{3.2} \: 5000 \: LOC$};
 			\foreach [count=\i] \x/\y in {#1}{
 				\draw[fill=maingray,maingray] (0,\i) rectangle (6,\i+0.4);
 				\draw[fill=white,mainblue](0,\i) rectangle (\y,\i+0.4);
@@ -180,6 +179,7 @@
 		{#1}
 	}
 }
+\newcommand{\other}[1]{\renewcommand{\other}{#1}}
 
 %----------------------------------------------------------------------------------------
 %  SIDEBAR LAYOUT
@@ -211,41 +211,41 @@
     \renewcommand{\arraystretch}{2}
     \begin{tabular}{p{1cm} @{\hskip 0.5cm}p{5cm}}
       \ifthenelse{\equal{\cvnumberphone}{}}{}{
-      		{$
+      		{
               \begin{array}{l}
               \hspace{4mm} \Huge \textnormal{\faMobile} 
               \end{array}
-              $} 
+              } 
             & \cvnumberphone\\}
             
       \ifthenelse{\equal{\href{\cvsite}{\cvsite}}{}}{}{
-            {$
+            {
               \begin{array}{l}
               \hspace{2.8mm} \huge \textnormal{\textcolor{test}{\faGlobe}}
               \end{array}
-              $} 
+              } 
             & \href{http://\cvsite}{\cvsite} \\}
       \ifthenelse{\equal{\cvmail}{}}{}{
-            {$
+            {
               \begin{array}{l}
               \hspace{2.5mm} \huge \textnormal{\textcolor{yt}{\faEnvelopeO}}
               \end{array}
-              $} 
+              } 
             & \href{mailto:\cvmail}{\cvmail} \\}
       
        \ifthenelse{\equal{\cvlinkedin}{}}{}{
-            {$
+            {
               \begin{array}{l}
               \hspace{3mm} \huge \textnormal{\textcolor{linkedin}{\faLinkedin}}
               \end{array}
-              $} & \href{https://www.linkedin.com\cvlinkedin}{\cvlinkedin} \\
+              } & \href{https://www.linkedin.com\cvlinkedin}{\cvlinkedin} \\
             }  
         \ifthenelse{\equal{\cvgithub}{}}{}{
-            {$
+            {
               \begin{array}{l}
               \hspace{3mm} \huge \textnormal{\faGithub}
               \end{array}
-              $} & \href{https://www.github.com/\cvgithub}{\cvgithub} \\
+              } & \href{https://www.github.com/\cvgithub}{\cvgithub} \\
             }   
             
     \end{tabular}
@@ -254,7 +254,7 @@
     \vspace{3mm}
     \profilesection{Technical Skills}{1.2cm}
     
-    ~ \vspace{2mm}
+    \vspace{1.5mm}
     
     {\large \textbf{Overview}}
 
@@ -272,11 +272,78 @@
         \profilesection{Education}{3cm} 
         
         \education
-      
+
+        \profilesection{Other}{4.3cm}
+        \other
   \end{textblock}
 }
 
+\newcommand{\makesidebar}{
+  \begin{tikzpicture}[remember picture,overlay]
+      \node [rectangle, fill=sidecolor, anchor=north, minimum width=9cm, minimum height=\paperheight+1cm] (box) at (-5cm,0.5cm){};
+  \end{tikzpicture}
 
+  % ------------------------------------------------
+
+  \begin{textblock}{6}(0.5, 0.2)
+
+    % ------------------------------------------------
+    
+        \vspace{2mm}
+    {\Huge\color{pblue}\cvname}
+    
+    \vspace{2mm}
+
+    % ------------------------------------------------
+    
+    {\Large\color{black!80}\cvjobtitle}
+
+    %------------------------------------------------
+    
+    \vspace{3mm}
+    \renewcommand{\arraystretch}{2}
+    \begin{tabular}{p{1cm} @{\hskip 0.5cm}p{5cm}}
+      \ifthenelse{\equal{\cvnumberphone}{}}{}{
+      		{
+              \begin{array}{l}
+              \hspace{4mm} \Huge \textnormal{\faMobile} 
+              \end{array}
+              } 
+            & \cvnumberphone\\}
+            
+      \ifthenelse{\equal{\href{\cvsite}{\cvsite}}{}}{}{
+            {
+              \begin{array}{l}
+              \hspace{2.8mm} \huge \textnormal{\textcolor{test}{\faGlobe}}
+              \end{array}
+              } 
+            & \href{http://\cvsite}{\cvsite} \\}
+      \ifthenelse{\equal{\cvmail}{}}{}{
+            {
+              \begin{array}{l}
+              \hspace{2.5mm} \huge \textnormal{\textcolor{yt}{\faEnvelopeO}}
+              \end{array}
+              } 
+            & \href{mailto:\cvmail}{\cvmail} \\}
+      
+       \ifthenelse{\equal{\cvlinkedin}{}}{}{
+            {
+              \begin{array}{l}
+              \hspace{3mm} \huge \textnormal{\textcolor{linkedin}{\faLinkedin}}
+              \end{array}
+              } & \href{https://www.linkedin.com\cvlinkedin}{\cvlinkedin} \\
+            }  
+        \ifthenelse{\equal{\cvgithub}{}}{}{
+            {
+              \begin{array}{l}
+              \hspace{3mm} \huge \textnormal{\faGithub}
+              \end{array}
+              } & \href{https://www.github.com/\cvgithub}{\cvgithub} \\
+            }   
+            
+    \end{tabular}
+  \end{textblock}
+}
 %----------------------------------------------------------------------------------------
 %	 COLOURED SECTION TITLE BOX
 %----------------------------------------------------------------------------------------
@@ -286,17 +353,17 @@
 	\tikz[baseline=(char.base)]\node[anchor=north west, draw,rectangle, rounded corners, inner sep=1.6pt, minimum size=5.5mm, text height=3.6mm, fill=#2,#2,text=white](char){#1};%
 }
 
+% Section headings - make first 3 letters blue
 \def\@sectioncolor#1#2#3{%
 	{%
 		\color{pblue} #1#2#3%
 	}%
 }
 
-
 \renewcommand{\section}[1]{
   \par\vspace{\parskip}
 	{%
-		\LARGE\headingfont\color{headercolor}%
+		\LARGE\headingfont\color{pblue}%
 		\@sectioncolor #1%
 	}
   \par\vspace{1mm}
