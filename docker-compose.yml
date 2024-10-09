@@ -2,7 +2,7 @@ version: '2.2'
 services:
     sharelatex:
         restart: always
-        image: sharelatex/sharelatex@sha256:28f666f253f8a980e40da531b5c841eff5c2063593792595ad991e781f234e45 # 5.1.1
+        image: sharelatex/sharelatex:5.1.1
         container_name: sharelatex
         depends_on:
             mongo:
@@ -42,7 +42,7 @@ services:
             # OVERLEAF_RIGHT_FOOTER: '[{"text": "Hello I am on the Right"} ]'
     mongo:
        restart: always
-       image: mongo@sha256:54cbd623e11ce895bef20a0c5cc7e8bcabace2006584bc053b7221c14175e9a1 # 5.0
+       image: mongo:5.0.28
        container_name: mongo
        command: "--replSet overleaf"
        expose:
@@ -55,7 +55,7 @@ services:
            timeout: 10s
            retries: 5
     mongoinit:
-       image: mongo@sha256:54cbd623e11ce895bef20a0c5cc7e8bcabace2006584bc053b7221c14175e9a1 # 5.0
+       image: mongo:5.0.28
        # this container will exit after executing the command
        restart: "no"
        depends_on:
@@ -71,7 +71,7 @@ services:
          ]
     redis:
         restart: always
-        image: redis@sha256:58593b08f49173e9ed640f82e7780a4611e39353ad9887f011fe82348b8ef1cb # 6.2
+        image: redis:6.2
         container_name: redis
         expose:
             - 6379
