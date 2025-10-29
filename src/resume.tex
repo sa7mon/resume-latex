@@ -15,19 +15,18 @@
 \documentclass[a4paper]{twentysecondcv} % a4paper for A4
 
 \newcommand\skills{
+\baselineskip=1.25\baselineskip
 Web Vulnerability Exploitation\\
-API Design\\
-Hash Cracking\\
-Linux Privilege Escalation\\
-Risk Management\\
+Threat Modeling\\
 Manual Source Code Review\\
-WiFi Attacks\\
-OSINT
+Secure API Design\\
+Pentest Infra \& Automation \\
+Risk Management
 }
 
 % Programming skill bars
 \programming{
-    {Bash $\textbullet$ PHP $\textbullet$ \large \LaTeX / 2.5},
+    {Bash $\textbullet$ \large \LaTeX / 2.5},
     {JavaScript $\textbullet$ Java $\textbullet$ React / 4.0},
     {Golang $\textbullet$ Python $\textbullet$ SQL / 5}}
 
@@ -74,7 +73,7 @@ OSINT
         \textbf{Learning}
         \setlist{nosep}
         \begin{enumerate}[wide, itemindent=0, label=]
-            \item Pocketbase
+            \item Kubernetes
             \item Nix / NixOS
             \item React
             \item Caido
@@ -107,82 +106,125 @@ OSINT
 
 \begin{twenty} % Environment for a list with descriptions
     \twentyitem
-        {Aug 2019 -}
-        {Present}
-        {Lead Penetration Testing Engineer}
         {Target}
         {}
-        {\begin{itemize}
-            \item Perform pentests on web apps, APIs, and networks running on a diverse assortment of hardware and environments.
-            \item Create PoCs as needed to exploit vulnerabilities
-            \item Develop and maintain automated testing tools in Go \& Python
-            \item Expand scope of bug bounty program and triage reports
-            \item Perform annual PCI pentests according to PCI-DSS 4.0 requirements
-            \item Mentor junior pentesters on pentesting and processes
-            \item Work with dev teams to properly scope and identify risks in apps under test. Discover attack surface and learn how the app works before testing.
-            \item Assist dev teams in remediating  vulnerabilities and validate fixes
-            \item Present High and Critical level findings to leadership
-            \item Work with BISO to identify risk in in-development applications and include security controls in design
-        \end{itemize}}
-  %       \\
-  %   \twentyitem
-  %   	{Feb 2018 -}
-		% {May 2019}
-  %       {Graduate Assistant - Developer}
-  %       {\href{https://mankato.mnsu.edu/}{MNSU}}
-  %       {}
-  %       {\begin{itemize}
-  %       \item Developed a live bus tracking app for the University in partnership with the City of Mankato
-  %       \item Web app used Knockout JS, jQuery frameworks for the  frontend with a C\# MVC + Web API 2 backend
-  %       \end{itemize}}
- %        \\
-	% \twentyitem
- %    	{Apr 2016 -}
-	% 	{Feb 2018}
- %        {Developer Intern}
- %        {\href{https://www.fpx.com}{FPX}}
- %        {}
- %        {\begin{itemize}
- %        \item Wrote tests for and reported bugs found in Java SaaS product
- %        \item Ran large test suites written in Java and JavaScript and interpreted results in a CI/CD environment
- %        \item Tools used: Atlassian suite, Jenkins, Selenium, JMeter
- %        \end{itemize}}
-    
-    \\   
-  %   \twentyitem
-  %  		{Nov 2015 -}
-		% {Apr 2016}
-  %       {UX Lab Intern}
-  %       {\href{https://mankato.mnsu.edu/}{MNSU}}
-  %       {}
-  %       {
-  %       {\begin{itemize}
-  %       \item Developed Windows Phone app in C\# to be used campus-wide
-  %       \item Assisted other MNSU classes in running usability and user experience tests with state-of-the-art testing technologies including eye-tracking hardware and video monitoring
-
-  %   \end{itemize}}
-        % }
-
-        
+        {Lead Engineer - Penetration Testing}
+        {2019 - Present}
+        {}
+        {}        
 	%\twentyitem{<dates>}{<title>}{<location>}{<description>}
 \end{twenty}
 
+{\vspace{-5mm}}
+
+
+\hyphenation{hardware security detection better testing application guidance following}
+
+\begin{itemize}[leftmargin=8mm]
+\baselineskip=0.8\baselineskip
+    % \item Perform  pentests on web apps, APIs, and networks across diverse hardware and environments
+    \item Perform security assessments and secure code review of web apps following the OWASP Web Security Testing Guide (WSTG)
+    \item Develop and maintain vulnerability management system, automated testing tools, and testing infrastructure
+    \item Use SCA, DAST, and SAST tools to aide in identifying and exploiting application vulnerabilities
+    % \item Guide developers in remediating vulnerabilities and validating fixes
+    \item Present technical details of vulnerabilities to developers and provide guidance for remediation
+    % \item Work closely with SAST, DAST, and SCA teams to improve vulnerability detection at scale
+    \item Consult with developers to perform threat model assessments using STRIDE framework
+    \item Work with business liaisons to identify risks at project planning phase and bake in security controls from the start
+    \item Triage bug bounty reports and expand scope    
+    % \item Own and deliver improved compliance testing process providing much more security value in a fraction of the time
+    \item Mentor junior pentesters and develop training path to upskill
+    \item Own pentest scoping and information gathering process
+    \item Demonstrate business risk of impactful findings to leadership including CISO
+    \item Perform compliance testing, meeting PCI-DSS requirements
+    \item Lead cross-team efforts to eliminate common vulnerable patterns
+    \item Assist in org-wide critical vulnerability remediation (i.e. Log4j)
+    \end{itemize}
+
+\section{Certifications}
+
+\begin{twenty}
+    \twentyitem
+    {2025}
+    {}
+    {GWAPT}
+    {GIAC / SANS}
+    {GIAC Web Application Penetration Tester}
+    {}
+    \twentyitem
+    {2023}
+    {}
+    {OSWA}
+    {OffSec}
+    {OffSec Web Assessor}
+    {}
+    \twentyitem
+    {2021}
+    {}
+    {CISSP}
+    {ISC^2}
+    {Certified Information Systems Security Professional}
+    {}
+    {}
+    \twentyitem
+    {2021}
+    {}
+    {GCPN}
+    {GIAC / SANS}
+    {GIAC Cloud Penetration Tester}
+    {}
+\end{twenty}
+\vspace{-5mm}
+
+\section{Research}
+\begin{twenty} % Environment for a list with descriptions
+    \twentyitem
+    	{2025}
+		{}
+        {\href{https://github.com/factionsecurity/faction/security/advisories/GHSA-97cv-f342-v2jc}{CVE-2025-27422}}
+        {\href{https://www.cve.org/CVERecord?id=CVE-2025-27422}{cve.org}}
+        {\vspace{-2mm}}
+        {Authentication Bypass via User Creation}
+\\
+    \twentyitem
+    	{2025}
+		{}
+        {SecretCon Talk}
+        {SecretCon}
+        {\vspace{-2mm}}
+        {\textit{Prioritizing Internal Pentests: so much to hack, so little time}}
+\\
+    \twentyitem
+    	{2019}
+		{}
+        {Wired Article}
+        {\href{https://www.wired.com/story/i-scraped-millions-of-venmo-payments-your-data-is-at-risk/}{wired.com}}
+        {\vspace{-2mm}}
+        {\textit{I Scraped Millions of Venmo Payments. Your Data Is at Risk}}
+\\
+    \twentyitem
+    	{2019}
+		{}
+        {CIACAM Talk}
+        {\href{https://minneapolis.hosting.acm.org/ciacam/}{CIACAM}}
+        {\vspace{-2mm}}
+        {\textit{miniprint - a printer honeypot}}
+\end{twenty}
 
 {\vspace{-2mm}}
-\section{Research \& Training}
+\section{Projects}
 
 \begin{twenty}
     
-    \twentyitem
-    	{\hspace{10mm} \Large \faMoney}
-		{}
-        {Venmo Data}
-        {\href{https://github.com/sa7mon/venmo-data}{GitHub}}
-        {\vspace{-2mm}}
-        {\begin{itemize}
-        \item To help raise security awareness, I scraped and posted 7 million Venmo transactions from their API. This project received press from \href{https://www.forbes.com/sites/kevinmurnane/2019/06/17/venmo-opens-your-transaction-history-to-anyone-who-wants-to-look-heres-how-to-fix-it/}{Forbes}, \href{https://www.wired.com/story/i-scraped-millions-of-venmo-payments-your-data-is-at-risk/}{Wired}, \href{https://gizmodo.com/millions-of-transactions-scraped-in-latest-demonstratio-1835587886}{Gizmodo}, \href{https://techcrunch.com/2019/06/16/millions-venmo-transactions-scraped/}{TechCrunch}, \href{https://nymag.com/intelligencer/2019/06/venmo-payments-should-be-private.html}{New York Magazine}, and many others.
-        \end{itemize}}
-    \\
+  %   \twentyitem
+  %   	{\hspace{10mm} \Large \faMoney}
+		% {}
+  %       {Venmo Data}
+  %       {\href{https://github.com/sa7mon/venmo-data}{GitHub}}
+  %       {\vspace{-2mm}}
+  %       {\begin{itemize}
+  %           \item To help raise security awareness, I scraped and posted 7 million Venmo transactions from their API. This project received press from \href{https://www.forbes.com/sites/kevinmurnane/2019/06/17/venmo-opens-your-transaction-history-to-anyone-who-wants-to-look-heres-how-to-fix-it/}{Forbes}, \href{https://www.wired.com/story/i-scraped-millions-of-venmo-payments-your-data-is-at-risk/}{Wired}, \href{https://gizmodo.com/millions-of-transactions-scraped-in-latest-demonstratio-1835587886}{Gizmodo}, \href{https://techcrunch.com/2019/06/16/millions-venmo-transactions-scraped/}{TechCrunch}, \href{https://nymag.com/intelligencer/2019/06/venmo-payments-should-be-private.html}{New York Magazine}, and many others.
+  %       \end{itemize}}
     \twentyitem
     	{\hspace{10mm} \Large \faDatabase}
 		{}
@@ -190,19 +232,32 @@ OSINT
         {\href{https://github.com/sa7mon/s3scanner}{GitHub}}
         {\vspace{-2mm}}
         {\begin{itemize}
-        \item Scan for mis-configured buckets across S3-compatible APIs. Find sensitive data thanks to insecure permissions. 2.5k stars on GitHub.
+            \item Find misconfigured buckets exposing sensitive data across S3-compatible APIs.
+            \item Featured in \href{https://nostarch.com/metasploit-2nd-edition}{\textit{Metasploit: The Penetration Tester's Guide} (Kennedy et al., 2024)}
+            \item Available in Kali apt repo (and many others)
+            \item Golang project with \textasciitilde3k GitHub stars.
         \end{itemize}}
-    \\
+\\
     \twentyitem
-    	{\hspace{10mm} \Large \faPrint}
+    	{\hspace{10mm} \Large \faPencil}
 		{}
-        {miniprint}
-        {\href{https://github.com/sa7mon/miniprint}{GitHub}}
+        {Technical Blog}
+        {\href{https://danthesalmon.com/posts/}{danthesalmon.com}}
         {\vspace{-2mm}}
         {\begin{itemize}
-        \item A printer honeypot to detect and trace common printer exploitation attacks and print job spam campaigns
+            \item Articles about infosec and homelab projects 
+            \item Links to write-ups, conference talks, and vuln disclosures
         \end{itemize}}
-    \\
+  %   \twentyitem
+  %   	{\hspace{10mm} \Large \faPrint}
+		% {}
+  %       {miniprint}
+  %       {\href{https://github.com/sa7mon/miniprint}{GitHub}}
+  %       {\vspace{-2mm}}
+  %       {\begin{itemize}
+  %       \item A printer honeypot to detect and trace common printer exploitation attacks and print job spam campaigns
+  %       \end{itemize}}
+  %   \\
   %    \twentyitem
   %   	{\hspace{10mm} \Large \faGlobe}
 		% {}
@@ -212,126 +267,60 @@ OSINT
   %       {\begin{itemize}
   %       \item Outside of school, I like to spend time hunting bug bounties on Hackerone and participating in CTFs on hackthebox.eu
   %       \end{itemize}}
-  %   \\
-  %    \twentyitem
-  %   	{\hspace{10mm} \Large \faUsers}
-		% {}
-  %       {Information Security Conferences}
-  %       {}
-  %       {\vspace{-2mm}}
-  %       {\begin{itemize}
-  %       \item As often as I can, I like to attend InfoSec conferences including BSides, BlackHat, Secure360, and Cyber Security Summit
-  %       \end{itemize}}
 
-\end{twenty}
 
-\section{Certifications}
-
-\begin{twenty}
-    \twentyitem
-    {May 2023}
-    {}
-    {OSWA - OffSec Web Assessor}
-    {OffSec}
-    % {}
-    {
-    % \begin{itemize}
-    %     \item Web application architecture analysis
-    %     \item Vulnerability scanning and identification
-    %     \item Manual exploitation techniques
-    %     \item Client-side attack vectors
-    %     \item Reporting and communication of findings\\
-    % \end{itemize}
-    }
-    {}
-    \twentyitem
-    {Aug 2021}
-    {}
-    {CISSP}
-    {ISC^2}
-    {}
-    {
-    % \vspace*{-1.0\multicolsep}
-    % \begin{multicols}{2}
-    %     \begin{itemize}
-    %     \item Security \& Risk Management
-    %     \item Asset Security
-    %     \item Security Architecture \& Engineering
-    %     \item Communication \& Network Security
-    %     \item Identity \& Access Management (IAM)
-    %     \item Security Assessment \& Testing
-    %     \item Security Operations
-    %     \item Software Development Security
-    %     \end{itemize}
-    %     \end{multicols}
-    %     \vspace*{-1.5\multicolsep}
-    }
-    {}
-    \twentyitem
-    {Feb 2021}
-    {}
-    {GCPN - GIAC Cloud Penetration Tester}
-    {GIAC}
-    {
-    % \begin{itemize}
-    %     \item Cloud Penetration Testing Fundamentals, Environment Mapping, and Service Discovery
-    %     \item AWS and Azure Cloud Services and Attacks
-    %     \item Cloud Native Applications with Containers and CI/CD Pipelines\\
-    % \end{itemize}
-    }
-    {}
 \end{twenty}
 
 %----------------------------------------------------------------------------------------
 %	 RESEARCH
 %----------------------------------------------------------------------------------------
-\pagebreak
-\makesidebar % Print the sidebar
+% \pagebreak
+% \makesidebar % Print the sidebar
 
-\section{Other Experience}
+% \section{Other Experience}
 
-\begin{twenty} % Environment for a list with descriptions
-    \twentyitem
-    	{Feb 2018 -}
-		{May 2019}
-        {Graduate Assistant - Developer}
-        {\href{https://mankato.mnsu.edu/}{MNSU}}
-        {}
-        {\begin{itemize}
-        \item Developed a live bus tracking app for the University in partnership with the City of Mankato
-        \item Web app used Knockout JS, jQuery frameworks for the  frontend with a C\# MVC + Web API 2 backend
-        \end{itemize}}
-        \\
-	\twentyitem
-    	{Apr 2016 -}
-		{Feb 2018}
-        {Developer Intern}
-        {\href{https://www.fpx.com}{FPX}}
-        {}
-        {\begin{itemize}
-        \item Wrote tests for and reported bugs found in Java SaaS product
-        \item Ran large test suites written in Java and JavaScript and interpreted results in a CI/CD environment
-        \item Tools used: Atlassian suite, Jenkins, Selenium, JMeter
-        \end{itemize}}
+% \begin{twenty} % Environment for a list with descriptions
+%     \twentyitem
+%     	{Feb 2018 -}
+% 		{May 2019}
+%         {Graduate Assistant - Developer}
+%         {\href{https://mankato.mnsu.edu/}{MNSU}}
+%         {}
+%         {\begin{itemize}
+%         \item Developed a live bus tracking app for the University in partnership with the City of Mankato
+%         \item Web app used Knockout JS, jQuery frameworks for the  frontend with a C\# MVC + Web API 2 backend
+%         \end{itemize}}
+%         \\
+% 	\twentyitem
+%     	{Apr 2016 -}
+% 		{Feb 2018}
+%         {Developer Intern}
+%         {\href{https://www.fpx.com}{FPX}}
+%         {}
+%         {\begin{itemize}
+%         \item Wrote tests for and reported bugs found in Java SaaS product
+%         \item Ran large test suites written in Java and JavaScript and interpreted results in a CI/CD environment
+%         \item Tools used: Atlassian suite, Jenkins, Selenium, JMeter
+%         \end{itemize}}
     
-    \\   
-    \twentyitem
-   		{Nov 2015 -}
-		{Apr 2016}
-        {UX Lab Intern}
-        {\href{https://mankato.mnsu.edu/}{MNSU}}
-        {}
-        {
-        {\begin{itemize}
-        \item Developed Windows Phone app in C\# to be used campus-wide
-        \item Assisted other MNSU classes in running usability and user experience tests with state-of-the-art testing technologies including eye-tracking hardware and video monitoring
+%     \\   
+%     \twentyitem
+%    		{Nov 2015 -}
+% 		{Apr 2016}
+%         {UX Lab Intern}
+%         {\href{https://mankato.mnsu.edu/}{MNSU}}
+%         {}
+%         {
+%         {\begin{itemize}
+%         \item Developed Windows Phone app in C\# to be used campus-wide
+%         \item Assisted other MNSU classes in running usability and user experience tests with state-of-the-art testing technologies including eye-tracking hardware and video monitoring
 
-    \end{itemize}}
-        }
+%     \end{itemize}}
+%         }
 
         
-	%\twentyitem{<dates>}{<title>}{<location>}{<description>}
-\end{twenty}
+% 	%\twentyitem{<dates>}{<title>}{<location>}{<description>}
+% \end{twenty}
 
 
 \end{document} 
