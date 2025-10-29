@@ -6,7 +6,9 @@
 - shell into sharelatex container
 - 
     ```
+    tlmgr update --self
     tlmgr install fontspec clearsans pstricks fontawesome textpos ragged2e etoolbox ifmtarg marvosym parskip pgf enumitem xkeyval booktabs caption
+    apt update
     apt install texlive-fonts-extra
     apt install fonts-font-awesome
     ```
